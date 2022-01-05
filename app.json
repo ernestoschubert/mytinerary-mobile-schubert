@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "mytinerary-mobile-schubert",
+    "slug": "mytinerary-mobile-schubert",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "mytinerary-mobile-schubert"
+}
