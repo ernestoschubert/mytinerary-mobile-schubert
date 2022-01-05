@@ -29,8 +29,6 @@ const HomeStyles = StyleSheet.create({
         backgroundColor: 'rgba(0, 0 , 0, 0.5)',
         textAlign: 'center',
         padding: 10,
-        // paddingTop: 5,
-        // paddingBottom: 5,
         borderRadius: 10
     },
     heroStyles: {

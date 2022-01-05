@@ -30,14 +30,14 @@ const Cities = (props) => {
     return (
         
         <ScrollView>
-            <View style={{backgroundColor: '#292929'}}>
+            <View style={{backgroundColor: '#292929', height: '100%'}}>
                 <ImageBackground
-                style={{width: '100%', height: 300}}
+                style={{width: '100%', height: 400}}
                 source={worldmap} 
                 resizeMode="cover">
                     <View style={heroCities}>
                         <Text style={citiesTitle}>MyTinerary Trips</Text>
-                        <TextInput placeholder="Search a city" style={inputSearch} onChange={(e) => props.getFiltered(cities , e.target.value)}/>
+                        <TextInput placeholder="Search a city" style={inputSearch} onChange={(e) => props.getFiltered(cities , e.nativeEvent.text)}/>
                     </View>
                 </ImageBackground>
                 <View>

@@ -28,11 +28,15 @@ const CitiesStyles = StyleSheet.create({
         height: 250,
         justifyContent: 'flex-end',
         alignItems: 'center',
-        marginBottom: 15
+        marginBottom: 15,
+        shadowColor: '#171717',
+        shadowOffset: {width: -2, height: 0.5},
+        shadowOpacity: 0.2,
+        shadowRadius: 3,
     },
     heroCities: {
-        height: 200,
-        justifyContent: 'center',
+        height: 300,
+        justifyContent: 'space-between',
         alignItems: 'center',
     },
     citiesCont: {
@@ -52,9 +56,14 @@ const CitiesStyles = StyleSheet.create({
     },
     inputSearch: {
         backgroundColor: '#fff', 
+        width: 200,
         borderRadius: 10, 
         padding: 10, 
-        marginTop: 30
+        marginTop: 30,
+        shadowColor: '#171717',
+        shadowOffset: {width: -2, height: 0.5},
+        shadowOpacity: 0.2,
+        shadowRadius: 3,
     },
     citiesTitle: {
         fontSize: 24, 
@@ -62,6 +71,7 @@ const CitiesStyles = StyleSheet.create({
         fontWeight: 'bold',
         backgroundColor: '#0000009a',
         padding: 10,
+        marginTop: 50,
         paddingLeft: 20,
         paddingRight: 20,
         borderRadius: 10

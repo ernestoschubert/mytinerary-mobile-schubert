@@ -1,6 +1,5 @@
 const usersReducer = (state = {userImg: null, user: null, firstName: null, lastName: null, email: null, token: null, _id: null, allCountries: []}, action) => {
     if(action.type === 'LOG_USER') {
-        localStorage.setItem('token', action.payload.token);
         return {
             ...state,
             user: action.payload,
@@ -12,7 +11,6 @@ const usersReducer = (state = {userImg: null, user: null, firstName: null, lastN
             _id: action.payload._id
         }
     } else if(action.type === 'LOG_OUT'){
-        localStorage.clear()
         return {
             token: null,
             userImg : null,
