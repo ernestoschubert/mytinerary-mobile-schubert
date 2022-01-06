@@ -37,7 +37,10 @@ const Cities = (props) => {
                 resizeMode="cover">
                     <View style={heroCities}>
                         <Text style={citiesTitle}>MyTinerary Trips</Text>
-                        <TextInput placeholder="Search a city" style={inputSearch} onChange={(e) => props.getFiltered(cities , e.nativeEvent.text)}/>
+                        <TextInput placeholder="Search a city" 
+                            style={inputSearch} 
+                            onChange={(e) => props.getFiltered(cities , e.nativeEvent.text)}
+                        />
                     </View>
                 </ImageBackground>
                 <View>
@@ -54,10 +57,15 @@ const Cities = (props) => {
                                         // <Link to={`/city/${_id}`} key={_id} className="col-10 col-lg-5 mb-4">
                                             <View key={_id} style={contCity}>
                                                 <ImageBackground 
-                                                source={images[index]}
+                                                source={{uri: src}}
                                                 resizeMode="cover"
                                                 style={cityImg}
-                                                imageStyle={{ borderRadius: 10 }}>
+                                                imageStyle={{ 
+                                                    borderRadius: 10,
+                                                    shadowColor: '#171717',
+                                                    shadowOffset: {width: -2, height: 0.5},
+                                                    shadowOpacity: 0.2,
+                                                    shadowRadius: 3, }}>
                                                     <View>
                                                         <Text style={cityName}>
                                                             {city + " - " + country}

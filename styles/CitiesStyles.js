@@ -29,10 +29,6 @@ const CitiesStyles = StyleSheet.create({
         justifyContent: 'flex-end',
         alignItems: 'center',
         marginBottom: 15,
-        shadowColor: '#171717',
-        shadowOffset: {width: -2, height: 0.5},
-        shadowOpacity: 0.2,
-        shadowRadius: 3,
     },
     heroCities: {
         height: 300,

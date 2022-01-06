@@ -19,6 +19,7 @@ const HomeStyles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         padding: 5,
+        width: 100,
         // marginTop: 15
     },
     buttonText: {
@@ -33,6 +34,7 @@ const HomeStyles = StyleSheet.create({
     },
     heroStyles: {
         padding: 20,
+        height: '100%',
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'

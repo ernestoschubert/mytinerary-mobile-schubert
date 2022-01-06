@@ -127,7 +127,7 @@ const SignUp = (props) => {
                               style={pickerStyle}
                               selectedValue={selectedValue} 
                               onChange={(e) => setNewUser({...newUser, country: e.nativeEvent.text })}>
-                                  <Picker.Item disabled value="choose your country" label='Choose your country'/>
+                                  <Picker.Item value="choose your country" label='Choose your country'/>
                                   {   
                                       typeof(allCountries) === "object" ?
                                       allCountries.map((country, index) => {

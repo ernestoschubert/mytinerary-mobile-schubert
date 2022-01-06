@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { connect } from "react-redux";
 import usersActions from "../redux/actions/usersActions";
-import { View, Text, TextInput, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, ScrollView, Alert } from 'react-native';
 
 const SignIn = (props) => {
 
@@ -21,19 +21,19 @@ const SignIn = (props) => {
         e.preventDefault()
         let info = Object.values(logInUser).some(infoUser => infoUser === "")
         if(info) {
-            Alert('error', 'There are fields incomplete, please complete them')
+            Alert.alert('error', 'There are fields incomplete, please complete them')
         } else {
             props.signInUser(logInUser)
             .then(response => {
                 if(!response.data.success) {
-                   Alert('error', 'Email or password incorrect')
+                   Alert.alert('error', 'Email or password incorrect')
                 } else {
-                    Alert('success', 'Welcome! You have been successfully logged')
+                    Alert.alert('success', 'Welcome! You have been successfully logged')
                 }
             })
             .catch(error => {
                 console.log(error)
-                Alert('error', 'Email or password incorrect')
+                Alert.alert('error', 'Email or password incorrect')
             })
         }
     }
@@ -59,7 +59,7 @@ const SignIn = (props) => {
 
     return (
         <ScrollView>
-            <View className="cont-form">
+            <View style={{marginTop: 50}}>
                 <Text>Sign In</Text>
                 <View className="form-style">
                     <TextInput 

@@ -3,6 +3,7 @@ import {View, Text, TouchableOpacity, ImageBackground, Image, Alert, ScrollView}
 import HomeStyles from '../styles/HomeStyles';
 import citysunset from '../assets/city_sunset.jpg'
 import logo from '../assets/mytinerary_logo.png'
+import CarouselRender from '../components/CarouselRender'
 
 const Home = () => {
     
@@ -61,9 +62,7 @@ const Home = () => {
                         <View>
                             <Text>Popular MyTineraries</Text>
                             <View>
-                                <Text>
-                                    Carousel
-                                </Text>
+                                <CarouselRender />
                             </View>
                         </View>    
                     </View>
