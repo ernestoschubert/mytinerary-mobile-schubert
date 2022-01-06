@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import usersActions from '../redux/actions/usersActions';
 import { connect } from 'react-redux';
-import { Text, View, TextInput, TouchableOpacity, Picker} from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, Alert} from 'react-native';
 import SignUpStyles from '../styles/SignUpStyles';
-// import { Picker } from '@react-native-picker/picker';
+import { Picker } from '@react-native-picker/picker';
 
 const SignUp = (props) => {
     
@@ -39,13 +39,13 @@ const SignUp = (props) => {
       e.preventDefault()
       let info = Object.values(newUser).some(infoUser => infoUser === '')
       if(info) {
-        Alert('error', 'There are fields incomplete, please complete them')
+        Alert.alert('error', 'There are fields incomplete, please complete them')
       } else {
         props.signUpUser(newUser)
         .then(response => {
           console.log(response)
           if(response.data.success) {
-              Alert('success', 'Your account has been created!')
+              Alert.alert('success', 'Your account has been created!')
           } else if (response.data.errors) {
             setErrorInput({})
             response.data.errors.map(error => setErrorInput(messageError => {
@@ -55,12 +55,12 @@ const SignUp = (props) => {
               }
             }))
           } else {
-              Alert('error',  'That email has already been used! Try with another one')
+              Alert.alert('error',  'That email has already been used! Try with another one')
             }
             })
         .catch(error => {
           console.log(error)
-          Alert('error', 'We are having technicas difficulties! Come back later!')
+          Alert.alert('error', 'We are having technicas difficulties! Come back later!')
         })
           }
         }
@@ -78,16 +78,16 @@ const SignUp = (props) => {
           props.signUpUser(googleUser)
           .then((response) => {
             if (response.data.success){
-              Alert('success', 'Your account has been created!')
+              Alert.alert('success', 'Your account has been created!')
             }
             else{
               setErrorInput(response.data.error)
-              Alert('error', 'Something went wrong! Come back later!')
+              Alert.alert('error', 'Something went wrong! Come back later!')
             }
           })
           .catch((error) => {
                 console.log(error)
-                Alert('error', 'This account is already in use.')
+                Alert.alert('error', 'This account is already in use.')
             })
         }
             
@@ -125,7 +125,10 @@ const SignUp = (props) => {
                               />
                               <Picker  
                               style={pickerStyle}
-                              selectedValue={selectedValue} 
+                              selectedValue={selectedValue}
+                              onValueChange={(itemValue, itemIndex) =>
+                                setSelectedValue(itemValue)
+                              } 
                               onChange={(e) => setNewUser({...newUser, country: e.nativeEvent.text })}>
                                   <Picker.Item value="choose your country" label='Choose your country'/>
                                   {   

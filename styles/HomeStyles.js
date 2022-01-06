@@ -15,15 +15,17 @@ const HomeStyles = StyleSheet.create({
         justifyContent: "center"
     },
     button: {
-        backgroundColor: '#000',
+        backgroundColor: 'orange',
         justifyContent: 'center',
-        alignItems: 'center',
-        padding: 5,
+        alignSelf: 'center',
+        paddingVertical: 10,
+        borderRadius: 10,
         width: 100,
         // marginTop: 15
     },
     buttonText: {
         color: '#fff',
+        textAlign: 'center'
     },
     slogan : {
         color: 'white',
@@ -34,7 +36,7 @@ const HomeStyles = StyleSheet.create({
     },
     heroStyles: {
         padding: 20,
-        height: '100%',
+        height: 600,
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
@@ -42,6 +44,16 @@ const HomeStyles = StyleSheet.create({
     callToActionText: {
         color: '#fff',
         textAlign: 'center',
+        marginBottom: 30,
+        fontSize: 18,
+        width: 250
+    },
+    callToAction: {
+        backgroundColor: '#0000009a',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 200,
+        marginBottom: 100
     },
     logoImg: {
         width: 100,

@@ -3,7 +3,7 @@ import {createStore, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
 import rootReducer from "./redux/reducers/rootReducer"
 import thunk from "redux-thunk"
-import Home from './screens/Home'
+import Cities from './screens/Cities'
 
 const App = () => {
 
@@ -11,7 +11,7 @@ const App = () => {
 
   return (
     <Provider store={reduxStore}>
-      <Home />
+      <Cities />
     </Provider>
   )
 }

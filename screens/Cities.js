@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
-import { Text, View, TextInput, Image, ScrollView, ImageBackground } from 'react-native';
+import { Text, View, TextInput, Image, ScrollView, ImageBackground, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
-import {images} from '../assets/images.js'
 import citiesActions from '../redux/actions/citiesActions';
 import CitiesStyles from '../styles/CitiesStyles';
 
@@ -54,27 +53,26 @@ const Cities = (props) => {
                                 citiesFiltered.map((item, index) => {
                                     const { _id, city, country, src } = item
                                     return (
-                                        // <Link to={`/city/${_id}`} key={_id} className="col-10 col-lg-5 mb-4">
                                             <View key={_id} style={contCity}>
-                                                <ImageBackground 
-                                                source={{uri: src}}
-                                                resizeMode="cover"
-                                                style={cityImg}
-                                                imageStyle={{ 
-                                                    borderRadius: 10,
-                                                    shadowColor: '#171717',
-                                                    shadowOffset: {width: -2, height: 0.5},
-                                                    shadowOpacity: 0.2,
-                                                    shadowRadius: 3, }}>
-                                                    <View>
-                                                        <Text style={cityName}>
-                                                            {city + " - " + country}
-                                                        </Text>
-                                                    </View>
-                                                </ImageBackground>    
-                                                {/* <Button variant="warning" className="more-info">More Info</Button> */}
+                                                <TouchableOpacity>
+                                                    <ImageBackground 
+                                                    source={{uri: src}}
+                                                    resizeMode="cover"
+                                                    style={cityImg}
+                                                    imageStyle={{ 
+                                                        borderRadius: 10,
+                                                        shadowColor: '#171717',
+                                                        shadowOffset: {width: -2, height: 0.5},
+                                                        shadowOpacity: 0.2,
+                                                        shadowRadius: 3, }}>
+                                                        <View>
+                                                            <Text style={cityName}>
+                                                                {city + " - " + country}
+                                                            </Text>
+                                                        </View>
+                                                    </ImageBackground>
+                                                </TouchableOpacity>
                                             </View>
-                                        // </Link> 
                                     )
                                     })
                                 :

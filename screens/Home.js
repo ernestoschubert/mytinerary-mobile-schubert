@@ -7,14 +7,15 @@ import CarouselRender from '../components/CarouselRender'
 
 const Home = () => {
     
-    const {container, 
-        title, 
-        imageBg, 
-        button, 
-        buttonText, 
-        slogan, 
-        heroStyles, 
+    const {container,
+        title,
+        imageBg,
+        button,
+        buttonText,
+        slogan,
+        heroStyles,
         callToActionText,
+        callToAction,
         logoImg
     } = HomeStyles
 
@@ -44,27 +45,20 @@ const Home = () => {
                             </Text>
                         </View>
                     </View>
-                    <View>
-                        <View>    
-                            <View>
-                                <Text style={callToActionText}>
-                                    Choose your dreams trip! Discover all our trips
-                                </Text>                             
-                                <TouchableOpacity 
-                                onPress={()=> Alert.alert('Hola')}
-                                style={button}>
-                                    <Text style={buttonText}>
-                                        Here
-                                    </Text>
-                                </TouchableOpacity>
-                            </View>
+                    <View>   
+                        <View style={callToAction}>
+                            <Text style={callToActionText}>
+                                Choose your dreams trip! Discover all our trips
+                            </Text>                             
+                            <TouchableOpacity 
+                            onPress={()=> Alert.alert('Hola')}
+                            style={button}>
+                                <Text style={buttonText}>
+                                    Here
+                                </Text>
+                            </TouchableOpacity>
                         </View>
-                        <View>
-                            <Text>Popular MyTineraries</Text>
-                            <View>
-                                <CarouselRender />
-                            </View>
-                        </View>    
+                        <CarouselRender />
                     </View>
                 </View> 
             </ImageBackground>
